@@ -1,0 +1,46 @@
+@import './variables.css';
+@import './mixins.scss';
+
+.container {
+    max-width: calc(var(--containerMaxWidth) + var(--containerPaddingInline) * 2);
+    margin-inline: auto;
+    padding: var(--containerPaddingBlock) var(--containerPaddingInline);
+}
+
+.section {
+    padding: var(--containerPaddingInline);
+    margin-top: var(--containerPaddingBlock);
+}
+
+.button {
+    background-color: transparent;
+    padding: 4px 6px;
+    border-radius: 10px;
+    color: var(--color-grey);
+    transition: var(--transition-duration);
+
+    @include hover {
+        background-color: var(--color-peach);
+        color: var(--color-black);
+    }
+}
+
+.button-disabled {
+    background-color: var(--color-grey-alt);
+    padding: 4px 6px;
+    border-radius: 10px;
+    color: rgba(249, 84, 84, 0.617);
+    transition: var(--transition-duration);
+    outline: 1px solid red;
+    cursor: default;
+}
+
+.white-button {
+    background-color: var(--color-grey);
+    color: var(--color-black-alt);
+}
+
+.hidden {
+    opacity: 0;
+    max-height: 0;
+}

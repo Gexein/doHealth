@@ -1,0 +1,26 @@
+@import url('./fonts.css');
+
+:root {
+    /* COLORS */
+    --color-white: white;
+    --color-black: rgba(0, 0, 0, 0.904);
+    --color-black-alt: #30302f;
+    --color-grey: #EDE4E4;
+    --color-peach: #f6c9a5;
+    --color-orange: #ffa931;
+    --color-grey-alt: #EDE4E4;
+    /* CONTAINER */
+
+    --containerMaxWidth: 1440px;
+    --containerPaddingInline: 15px;
+    --containerPaddingBlock: 10px;
+    --border-radius-block: 10px;
+
+    /* FONTS */
+
+    --font-family-base: "Nunito", sans-serif;
+
+    /* TRANSITIONS */
+
+    --transition-duration: all 0.3s;
+}

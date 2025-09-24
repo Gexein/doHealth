@@ -1,0 +1,55 @@
+@import '../../../shared//styles/mixins.scss';
+
+.health-check-faq {
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        row-gap: 20px;
+    }
+
+    &__title {
+        font-size: 65px;
+
+        @include mobile {
+            font-size: 40px;
+        }
+
+        @include mobile-s {
+            font-size: 30px;
+        }
+
+        & span {
+            display: inline-block;
+
+
+            &:first-child {
+                opacity: 0;
+                animation: opacityOn 4s normal 1.5s forwards;
+            }
+
+            &:last-child {
+                animation: slideFromLeft 2s normal;
+            }
+        }
+    }
+
+    &__description {
+        opacity: 0;
+        max-width: 1200px;
+        text-align: center;
+        animation: opacityOn 3s 2s forwards;
+
+
+
+        @include mobile {
+            font-size: 20px;
+        }
+
+        @include mobile-s {
+            font-size: 16px;
+        }
+    }
+}

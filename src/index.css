@@ -1,0 +1,19 @@
+@import './shared/styles/reset.css';
+@import './shared/styles/variables.css';
+@import './shared/styles/fonts.css';
+@import './shared/styles/utils.scss';
+@import './shared/styles/animation.css';
+
+#root {
+    background-color: var(--color-black);
+    font-family: var(--font-family-base);
+    font-weight: 200;
+    font-size: 25px;
+    color: var(--color-grey);
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+#root * {
+    transition: var(--transition-duration);
+}

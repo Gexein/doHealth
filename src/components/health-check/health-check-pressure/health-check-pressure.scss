@@ -1,0 +1,59 @@
+@import '../../../shared//styles//mixins.scss';
+
+.health-check-pressure {
+    &__checker {
+        display: flex;
+        flex-direction: column;
+        row-gap: 30px;
+        // justify-content: center;
+        align-items: center;
+
+        & h3 {
+            @include mobile {
+                font-size: 20px;
+            }
+        }
+
+        & .big {
+            flex-direction: column;
+        }
+
+
+        .collect-wrapper {
+            display: flex;
+            gap: 50px;
+            align-items: center;
+
+
+            @include mobile {
+                flex-direction: column;
+            }
+
+            & select {
+                background-color: var(--color-grey);
+                color: var(--color-black-alt);
+                border-radius: var(--border-radius-block);
+                padding: 10px 15px;
+
+                font-size: 16px;
+                animation: jello 2s;
+            }
+
+            & input {
+                background-color: var(--color-grey);
+                color: var(--color-black-alt);
+                border-radius: var(--border-radius-block);
+                padding: 10px 15px;
+                max-width: 150px;
+                font-size: 16px;
+                animation: jello 2s;
+
+                &::placeholder {
+                    color: inherit;
+                }
+
+            }
+
+        }
+    }
+}

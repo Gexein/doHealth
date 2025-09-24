@@ -1,0 +1,76 @@
+*,
+::before,
+::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:where(fieldset[class]) {
+    border: none;
+}
+
+ul,
+li {
+    list-style: none;
+}
+
+input,
+textarea,
+select,
+button {
+    font: inherit;
+    border: none;
+}
+
+input:focus-visible {
+    outline: none;
+}
+
+html,
+body {
+    scrollbar-gutter: stable;
+}
+
+html {
+    height: 100%;
+}
+
+label,
+button {
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+}
+
+img,
+video {
+    max-width: 100%;
+    /* height: auto; */
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+a {
+    text-decoration: none;
+    font-family: inherit;
+    color: inherit;
+}
+
+body {
+    min-height: 100vh;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    font-weight: inherit;
+}

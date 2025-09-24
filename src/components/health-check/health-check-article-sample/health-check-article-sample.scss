@@ -1,0 +1,69 @@
+@import '../../../shared//styles//mixins.scss';
+
+.health-check-article {
+    &__container {
+        animation: fromMiniPerspective 1.5s;
+        perspective: 500px;
+        text-align: center;
+        padding-top: 35px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        row-gap: 50px;
+        background-color: var(--color-black);
+        border-radius: var(--border-radius-block);
+        text-align: left;
+        line-height: 200%;
+
+
+        @include mobile {
+            padding-top: 15px;
+        }
+    }
+
+    &__title-main {
+        opacity: 0;
+        animation: opacityOn 3s forwards;
+        font-size: 30px;
+        border-bottom: 1px solid var(--color-grey);
+        margin-bottom: 50px;
+    }
+
+    &__title {
+        opacity: 0;
+        animation: opacityOn 4s forwards, shakeTitle 2s ease 0s 1 normal none;
+        background-color: var(--color-black-alt);
+        padding: 5px 15px;
+        border-radius: var(--border-radius-block);
+        scroll-margin-top: 110px;
+
+        &:last-child {
+            visibility: hidden;
+        }
+
+        @include mobile {
+            font-size: 25px;
+        }
+
+        @include mobile-s {
+            font-size: 20px;
+        }
+    }
+
+    &__paragraph {
+        opacity: 0;
+        animation: opacityOn 5s forwards, scaleUp .5s;
+        padding-inline: 10px;
+
+        @include mobile {
+            font-size: 20px;
+        }
+
+        @include mobile-s {
+            font-size: 16px;
+        }
+    }
+
+
+}

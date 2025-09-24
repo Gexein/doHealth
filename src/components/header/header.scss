@@ -1,0 +1,199 @@
+@import '../../shared/styles/mixins.scss';
+
+.header {
+    background-color: var(--color-black-alt);
+    font-weight: 200;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 3;
+    animation: headerUp .5s 1;
+
+    &-account-button-wrapper {
+        display: flex;
+        column-gap: 50px;
+        align-items: center;
+        justify-content: center;
+
+
+
+        & img {
+            cursor: pointer;
+            transition: var(--transition-duration);
+
+            @include hover {
+                transform: scale(1.2) rotate(2deg);
+            }
+        }
+    }
+
+
+    &__container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__logo {
+        cursor: pointer;
+        transition: var(--transition-duration);
+
+        @include hover {
+            transform: scale(1.05) translateY(5px);
+        }
+    }
+
+    &__list {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        column-gap: 30px;
+    }
+
+    &__item {
+        position: relative;
+        transition: var(--transition-duration);
+        cursor: pointer;
+
+        @include hover {
+            transform: translateY(1.5px);
+        }
+
+        &::after {
+            content: '';
+            width: 0;
+            height: 2px;
+            background-color: var(--color-grey);
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            translate: -50%;
+            transition: var(--transition-duration);
+            opacity: 0;
+        }
+    }
+
+    &__burger-button {
+        transition: var(--transition-duration);
+        position: relative;
+
+        @include hover {
+            transform: scale(1.1);
+        }
+    }
+
+    &__dialog {
+
+
+        transition: var(--transition-duration);
+        display: flex;
+        padding: 30px 15px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        margin-inline: auto;
+        transform: translateY(-300px);
+        flex-direction: column;
+        row-gap: 20px;
+        width: 100%;
+        background-color: transparent;
+        color: var(--color-grey);
+        border: none;
+        backdrop-filter: blur(50px);
+        z-index: 20;
+
+
+        .header__list {
+            flex-direction: column;
+            align-items: start;
+        }
+
+        .header__item {
+            border-bottom: 1px dashed var(--color-grey);
+        }
+
+        .header__login {
+            justify-self: center;
+        }
+
+        .cross-button {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+        }
+
+        .cross-img {
+            pointer-events: none;
+        }
+    }
+
+    &__switch-theme-button {
+        padding: 15px 45px;
+        background-color: whitesmoke;
+        border-radius: 30px;
+        position: fixed;
+        top: 110px;
+        right: 10px;
+        border: 2px solid var(--color-grey);
+
+        @include mobile {
+            right: auto;
+            left: 5px;
+            top: 103px;
+
+
+        }
+
+        &:focus-visible {
+            outline: none;
+        }
+
+        &::after {
+            content: '';
+            border-radius: 50%;
+            background-color: var(--color-black);
+            border: 0.5px solid rgba(0, 0, 0, 0.904);
+            position: absolute;
+            height: 91%;
+            aspect-ratio: 1;
+            top: 1.6px;
+            right: 3px;
+            transition: var(--transition-duration);
+        }
+
+        &::before {
+            content: 'Тема';
+            position: absolute;
+            top: 29px;
+            right: 13px;
+            color: var(--color-grey);
+            letter-spacing: 2px;
+
+            @include mobile {
+                content: '';
+            }
+        }
+    }
+
+    & .switched {
+        &::after {
+            right: 62px;
+            background-color: var(--color-black);
+        }
+    }
+}
+
+@media (any-pointer: fine) {
+    .header {
+        &__item:hover {
+            &::after {
+                width: 100%;
+                opacity: 1;
+            }
+        }
+    }
+}
+
+.opened {
+    transform: translateY(0px);
+}
